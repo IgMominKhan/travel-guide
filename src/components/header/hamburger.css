@@ -1,0 +1,94 @@
+/* hamburger */
+
+.menu {
+  --menu-line-height: 4px;
+  --menu-line-spacing: 5px;
+  --animation-duration: 0.4s;
+  --menu-line-height-space: 9px;
+  --menu-line-height-negative-space: -9px;
+  @apply w-12 p-2 ms-4;
+}
+
+.menu .line-one,
+.menu .line-two,
+.menu .line-three {
+  height: var(--menu-line-height);
+  margin: var(--menu-line-spacing) auto;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+  @apply bg-gray-700 rounded-sm;
+}
+.menu .line-one {
+  animation: line-one-rev var(--animation-duration);
+}
+.menu .line-two {
+  animation: line-two-rev var(--animation-duration);
+}
+.menu .line-three {
+  animation: line-three-rev var(--animation-duration);
+}
+.menu.active .line-one {
+  animation: line-one var(--animation-duration) forwards;
+}
+.menu.active .line-two {
+  animation: line-two var(--animation-duration) forwards;
+}
+.menu.active .line-three {
+  animation: line-three var(--animation-duration) forwards;
+}
+.menu .no-animation {
+  animation: none !important;
+}
+
+@keyframes line-one {
+  50% {
+    transform: translateY(var(--menu-line-height-space));
+  }
+  100% {
+    transform: translateY(var(--menu-line-height-space)) rotate(45deg);
+  }
+}
+
+@keyframes line-one-rev {
+  0% {
+    transform: translateY(var(--menu-line-height-space)) rotate(45deg);
+  }
+  50% {
+    transform: translateY(var(--menu-line-height-space)) rotate(0deg);
+  }
+}
+
+/* line two */
+@keyframes line-two {
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes line-two-rev {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* line two */
+@keyframes line-three {
+  50% {
+    transform: translateY(var(--menu-line-height-negative-space));
+  }
+  100% {
+    transform: translateY(var(--menu-line-height-negative-space)) rotate(135deg);
+  }
+}
+@keyframes line-three-rev {
+  0% {
+    transform: translateY(var(--menu-line-height-negative-space)) rotate(135deg);
+  }
+  50% {
+    transform: translateY(var(--menu-line-height-negative-space)) rotate(0);
+  }
+}
