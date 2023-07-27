@@ -19,14 +19,11 @@ export default function Header() {
               height={36}
             />
           </Link>
-          <Link
-            href="add-new"
-            className="ms-auto px-6 py-2 bg-slate-700 text-white rounded"
-          >
-            Add a place
+          <Link href="add-new" className="btn">
+            Add Place
           </Link>
           <ul
-            className={`bg-gray-200 rounded-lg p-5 absolute top-0 transition-all duration-[1s] leading-relaxed ${
+            className={`bg-gray-200 rounded-lg p-5 absolute top-0 transition-all duration-[1s] leading-relaxed z-[9999] ${
               isOpen ? "translate-x-0 w-full" : "-translate-x-36 w-32"
             }`}
           >

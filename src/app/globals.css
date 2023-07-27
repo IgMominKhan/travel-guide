@@ -19,3 +19,7 @@
 .main-container {
   @apply w-11/12 lg:w-10/12 mx-auto;
 }
+
+.btn {
+  @apply ms-auto px-6 py-2 bg-slate-700 text-white rounded;
+}

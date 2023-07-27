@@ -12,7 +12,7 @@ export default function Hamburger({ isOpen: [isOpen, setIsOpen] }) {
 
   return (
     <div
-      className={`menu z-20 ${isOpen && "active"}`}
+      className={`menu z-[99999] ${isOpen && "active"}`}
       onClick={animateMenuIcon}
     >
       <div className="line-one no-animation"></div>
